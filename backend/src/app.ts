@@ -38,7 +38,7 @@ app.get("/ping", (req, res) => {
 
 // --- CONECTAR LAS RUTAS AQUÍ ---
 app.use("/api/auth", authRoutes);
-app.use("/accounts", accountRoutes);
+app.use("/api/accounts", accountRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use("/api/analytics", analyticsRoutes);
 // -------------------------------
