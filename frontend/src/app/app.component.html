@@ -1,0 +1,13 @@
+<div [class.dashboard-layout]="showSidebar()">
+  
+  <app-sidebar *ngIf="showSidebar()"></app-sidebar>
+
+  <main [class.main-content]="showSidebar()">
+    <router-outlet></router-outlet>
+  </main>
+
+  <i data-lucide="trending-up"></i>
+  <i data-lucide="wallet"></i>
+  <i data-lucide="arrow-down"></i>
+  
+</div>

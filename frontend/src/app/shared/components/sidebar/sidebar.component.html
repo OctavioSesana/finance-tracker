@@ -1,0 +1,71 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-box">
+      <span class="logo-icon">📈</span>
+    </div>
+    <span class="logo-text">FinTrack</span>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-group">
+      <p class="group-title">Main Menu</p>
+      <nav class="menu-items">
+
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <lucide-icon [img]="icons.LayoutDashboard" size="18"></lucide-icon>
+          Dashboard
+        </a>
+
+        <a routerLink="/transactions" routerLinkActive="active">
+          <lucide-icon [img]="icons.ArrowLeftRight" size="18"></lucide-icon>
+          Transactions
+        </a>
+
+        <a routerLink="/accounts" routerLinkActive="active">
+          <lucide-icon [img]="icons.Wallet" size="18"></lucide-icon>
+          My Accounts
+        </a>
+
+        <a routerLink="/analysis" routerLinkActive="active">
+          <lucide-icon [img]="icons.PieChart" size="18"></lucide-icon>
+          Analysis
+        </a>
+
+      </nav>
+    </div>
+
+    <div class="menu-group">
+      <p class="group-title">Settings</p>
+      <nav class="menu-items">
+
+  <a routerLink="/categories" routerLinkActive="active">
+    <lucide-icon [img]="icons.Folder" size="18"></lucide-icon>
+    Categories
+  </a>
+
+  <a routerLink="/profile" routerLinkActive="active">
+    <lucide-icon [img]="icons.User" size="18"></lucide-icon>
+    Profile
+  </a>
+
+</nav>
+    </div>
+  </div>
+
+  <div class="sidebar-footer" *ngIf="userData">
+  <div class="user-info">
+    <img [src]="'https://ui-avatars.com/api/?name=' + userData.name + '+' + userData.lastname + '&background=3b82f6&color=fff'" 
+         alt="avatar" 
+         class="avatar">
+    
+    <div class="user-details">
+      <p class="user-name">{{ userData.name }} {{ userData.lastname }}</p>
+      <p class="user-status">{{ userData.email }}</p>
+    </div>
+  </div>
+  
+  <button class="btn-logout" (click)="onLogout()">
+  <lucide-icon [img]="icons.LogOut" size="18"></lucide-icon>
+</button>
+</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container">
+
+  <h1>Transaction Management</h1>
+
+  <div class="grid">
+
+    <!-- PIE -->
+    <div class="card">
+      <h3>Gastos por Categoría</h3>
+      <p>Total: {{ totalExpenses | currency }}</p>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- LISTA -->
+    <div class="card">
+      <div *ngFor="let c of categories">
+        <div class="row">
+          <span>{{ c.category }}</span>
+          <span>{{ c.total | currency }}</span>
+        </div>
+
+        <div class="bar">
+          <div class="fill" [style.width.%]="c.percentage"></div>
+        </div>
+
+        <small>{{ c.percentage | number:'1.0-1' }}%</small>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPARACIÓN -->
+  <div class="grid">
+
+    <div class="card blue">
+      <h3>Mes Actual</h3>
+      <p>Ingresos: {{ current?.income | currency }}</p>
+      <p>Gastos: {{ current?.expense | currency }}</p>
+      <h2>{{ current?.balance | currency }}</h2>
+    </div>
+
+    <div class="card">
+      <h3>Mes Anterior</h3>
+      <p>Ingresos: {{ previous?.income | currency }}</p>
+      <p>Gastos: {{ previous?.expense | currency }}</p>
+      <h2>{{ previous?.balance | currency }}</h2>
+    </div>
+
+  </div>
+
+</div>

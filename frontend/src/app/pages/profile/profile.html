@@ -1,0 +1,41 @@
+<div class="profile-container">
+
+  <h1 class="title">Profile</h1>
+  <p class="subtitle">Manage your account information</p>
+
+  <div class="card">
+    <h3 class="card-title">Account Details</h3>
+
+    <div class="user-info">
+      <div class="avatar">
+        <i class="fa fa-user"></i>
+      </div>
+
+      <div>
+        <h2 class="username">{{ getFullName() }}</h2>
+        <span class="role">FinTrack Member</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- EMAIL -->
+    <div class="info-item">
+      <i class="fa fa-envelope icon"></i>
+      <div>
+        <span class="label">Email Address</span>
+        <p>{{ user?.email }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">About FinTrack</h3>
+    <p class="about-text">
+      FinTrack is a modern personal finance management application designed to help
+      you track your income, expenses, and overall financial health.
+    </p>
+  </div>
+
+</div>

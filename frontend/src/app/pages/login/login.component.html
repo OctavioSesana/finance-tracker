@@ -1,0 +1,100 @@
+<div class="login-container">
+
+  <!-- LEFT -->
+  <div class="login-left">
+
+    <div class="logo">
+      <span class="icon">📈</span>
+      <h2>FinTrack</h2>
+    </div>
+
+    <h1>Bienvenido de vuelta</h1>
+    <p class="subtitle">
+      Accede a tu cuenta para gestionar tus finanzas personales
+    </p>
+
+    <form (ngSubmit)="onLogin()">
+      <label>Correo Electrónico</label>
+      <input type="email" 
+        name="email"
+        [(ngModel)]="loginData.email" 
+        placeholder="tu@email.com" 
+        required />
+
+      <div class="password-row">
+        <label>Contraseña</label>
+        <span class="forgot">¿Olvidaste tu contraseña?</span>
+      </div>
+
+      <input type="password" 
+        name="password"
+        [(ngModel)]="loginData.password" 
+        placeholder="••••••••" 
+        required />
+
+      <button class="btn-primary" type="submit">
+        Iniciar Sesión →
+      </button>
+
+      <!-- ERROR -->
+      <p *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
+
+      <!-- LOADING -->
+      <p *ngIf="isLoading" class="loading-message">
+        Iniciando sesión...
+      </p>
+
+    </form>
+
+    <p class="register">
+      ¿No tienes una cuenta?
+      <span routerLink="/register">Regístrate gratis</span>
+    </p>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="login-right">
+
+    <span class="badge">✨ Gestión Financiera Inteligente</span>
+
+    <h1>Controla tus finanzas en un solo lugar</h1>
+
+    <p class="description">
+      Administra tus ingresos, gastos y cuentas de manera simple y eficiente.
+      Visualiza tus datos financieros con gráficos interactivos.
+    </p>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon green">↗</div>
+        <div>
+          <h4>Seguimiento en Tiempo Real</h4>
+          <p>Monitorea tus transacciones y saldo actualizado al instante</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon blue">⏱</div>
+        <div>
+          <h4>Análisis Detallado</h4>
+          <p>Gráficos y reportes para entender mejor tus hábitos</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon purple">💳</div>
+        <div>
+          <h4>Múltiples Cuentas</h4>
+          <p>Gestiona efectivo, tarjetas de crédito, débito y más</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

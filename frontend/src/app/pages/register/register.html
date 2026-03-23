@@ -1,0 +1,112 @@
+<div class="login-container">
+
+  <!-- LEFT -->
+  <div class="login-left">
+
+    <div class="logo">
+      <span class="icon">📈</span>
+      <h2>FinTrack</h2>
+    </div>
+
+    <h1>Crea tu cuenta</h1>
+    <p class="subtitle">
+      Comienza a gestionar tus finanzas personales de forma inteligente
+    </p>
+
+    <form (ngSubmit)="onRegister()">
+
+      <label>Nombre</label>
+      <input type="text"
+        name="name"
+        [(ngModel)]="registerData.name"
+        required />
+
+      <label>Apellido</label>
+      <input type="text"
+        name="lastName"
+        [(ngModel)]="registerData.lastName"
+        required />
+
+      <label>Correo Electrónico</label>
+      <input type="email"
+        name="email"
+        [(ngModel)]="registerData.email"
+        required />
+
+      <label>Contraseña</label>
+      <input type="password"
+        name="password"
+        [(ngModel)]="registerData.password"
+        required />
+
+      <label>Confirmar Contraseña</label>
+      <input type="password"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        required />
+
+      <button class="btn-primary" type="submit">
+        Crear Cuenta →
+      </button>
+
+      <!-- ERRORES -->
+      <p *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
+
+      <!-- SUCCESS -->
+      <p *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </p>
+
+    </form>
+
+    <p class="register">
+      ¿Ya tienes una cuenta?
+      <span routerLink="/login">Inicia sesión</span>
+    </p>
+
+  </div>
+
+  <!-- RIGHT (igual al login) -->
+  <div class="login-right">
+
+    <span class="badge">✨ Empieza Gratis</span>
+
+    <h1>Todo lo que necesitas para tus finanzas</h1>
+
+    <p class="description">
+      Una plataforma completa para administrar tu dinero, analizar tus gastos y tomar mejores decisiones financieras.
+    </p>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon green">🔒</div>
+        <div>
+          <h4>100% Gratis y Seguro</h4>
+          <p>Tus datos están protegidos</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon blue">⚡</div>
+        <div>
+          <h4>Configuración Rápida</h4>
+          <p>Empieza en minutos</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="icon purple">📊</div>
+        <div>
+          <h4>Reportes Detallados</h4>
+          <p>Visualiza tus finanzas fácilmente</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

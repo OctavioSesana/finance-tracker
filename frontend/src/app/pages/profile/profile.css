@@ -1,0 +1,98 @@
+.profile-container {
+  padding: 30px;
+  color: #fff;
+}
+
+/* TITLES */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+
+/* CARD */
+.card {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* USER INFO */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.username {
+  margin: 0;
+}
+
+.role {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: #1f2937;
+  margin: 20px 0;
+}
+
+/* INFO ITEMS */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  background: #0f172a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+}
+
+.label {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.info-item p {
+  margin: 0;
+}
+
+/* ABOUT */
+.about-text {
+  color: #9ca3af;
+  line-height: 1.6;
+}

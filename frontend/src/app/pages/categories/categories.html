@@ -1,0 +1,21 @@
+<div class="categories-container">
+  <header class="page-header">
+    <div>
+      <h1>Categories</h1>
+      <p class="text-muted">Manage your spending and income labels</p>
+    </div>
+  </header>
+
+  <div class="categories-grid">
+    <div class="category-card" *ngFor="let cat of categories">
+      <div class="icon-wrapper" [style.background-color]="cat.color + '20'">
+        <span class="cat-icon" [style.color]="cat.color">{{ cat.icon }}</span>
+      </div>
+      <div class="cat-details">
+        <h3>{{ cat.name }}</h3>
+        <span class="cat-type" [ngClass]="cat.type">{{ cat.type }}</span>
+      </div>
+      <button class="btn-dots">⋮</button>
+    </div>
+  </div>
+</div>

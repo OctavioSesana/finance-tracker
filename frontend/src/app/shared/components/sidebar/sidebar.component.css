@@ -1,0 +1,142 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #020617;
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* LOGO */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.logo-box {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* GROUP TITLE */
+.group-title {
+  font-size: 11px;
+  color: #475569;
+  margin: 10px 0;
+  padding-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MENU */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-items a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* ICON */
+.icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* HOVER */
+.menu-items a:hover {
+  background: #0f172a;
+  color: white;
+}
+
+/* ACTIVE (CLAVE 🔥) */
+.menu-items a.active {
+  background: #3b82f6;
+  color: white;
+}
+
+/* FOOTER */
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 13px;
+  color: white;
+  margin: 0;
+}
+
+.user-status {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+}
+
+.btn-logout {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background: #0f172a;
+  color: #ef4444;
+}
+
+lucide-icon {
+  stroke-width: 2;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.menu-items a:hover lucide-icon {
+  opacity: 1;
+}
+
+.menu-items a.active lucide-icon {
+  opacity: 1;
+}

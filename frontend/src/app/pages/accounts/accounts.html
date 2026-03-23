@@ -1,0 +1,122 @@
+<div class="accounts-page">
+  <header class="page-header">
+    <div>
+      <h1>My Accounts</h1>
+      <p class="text-muted">Manage your connected banks and wallets</p>
+    </div>
+    <button class="btn-add" (click)="toggleModal()">+ Add Account</button>
+  </header>
+
+  <!-- TOTAL -->
+<div class="total-card">
+  <span>Saldo Total</span>
+  <h2>${{ getTotalBalance() | number:'1.2-2' }}</h2>
+</div>
+
+<!-- GRID DE CUENTAS -->
+<div class="accounts-grid">
+  <div class="account-card" *ngFor="let acc of accounts">
+
+    <div class="card-header">
+      <div class="card-icon">💳</div>
+
+      <div class="card-actions">
+  <button class="icon-btn edit" (click)="editAccount(acc)">
+  ✏️
+</button>
+
+  <button class="icon-btn delete" (click)="deleteAccount(acc.id)">
+  🗑️
+</button>
+</div>
+    </div>
+
+    <div class="card-body">
+      <h3>{{ acc.name }}</h3>
+      <p class="card-type">Cuenta</p>
+
+      <div class="card-balance">
+        <span>Saldo</span>
+        <h2 
+          [ngClass]="{
+            'positive': acc.balance >= 0,
+            'negative': acc.balance < 0
+          }"
+        >
+          ${{ acc.balance | number:'1.2-2' }}
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-card">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+      <h2>Agregar Cuenta</h2>
+      <button class="btn-close" (click)="toggleModal()">✕</button>
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <div class="form-group">
+        <label>Nombre de la cuenta</label>
+        <input 
+          type="text" 
+          [(ngModel)]="newAccount.name"
+          placeholder="Ej: Banco Galicia"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Saldo inicial</label>
+
+        <div class="input-wrapper">
+          <span>$</span>
+          <input 
+            type="number" 
+            [(ngModel)]="newAccount.balance"
+            placeholder="0.00"
+          >
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="toggleModal()">Cancelar</button>
+      <button class="btn-save" (click)="saveAccount()">Crear cuenta</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showConfirmModal">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h2>Confirmación</h2>
+    </div>
+
+    <div class="modal-body">
+      <p>{{ confirmMessage }}</p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="showConfirmModal = false">
+        Cancelar
+      </button>
+
+      <button class="btn-save" (click)="confirmAction()">
+        Confirmar
+      </button>
+    </div>
+
+  </div>
+</div>
+</div>
