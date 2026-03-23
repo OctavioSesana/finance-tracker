@@ -37,7 +37,7 @@ export class LoginComponent {
   this.isLoading = true;
   this.errorMessage = '';
 
-  this.http.post<any>(`${environment.apiUrl}/auth/login`, this.loginData)
+  this.http.post<any>(`${environment.apiUrl}/api/auth/login`, this.loginData)
     .subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);

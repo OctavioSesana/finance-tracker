@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 export interface CategoryAnalytics {
   category: string;
@@ -19,7 +20,7 @@ export interface MonthlySummary {
 })
 export class AnalysisService {
 
-  private apiUrl = 'http://localhost:3000/api/analytics';
+  private apiUrl = `${environment.apiUrl}/api/analytics`;
 
   constructor(private http: HttpClient) {}
 

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
 import { AccountService } from '../../services/account.service';
+import { environment } from '../../../environments/environment.prod';
+
 
 @Component({
   selector: 'app-transactions',
@@ -16,7 +18,7 @@ export class TransactionsComponent implements OnInit {
   private http = inject(HttpClient);
   private authService = inject(AuthService);
   private accountService = inject(AccountService);
-  private apiUrl = 'http://localhost:3000/api/transactions';
+  private apiUrl = `${environment.apiUrl}/api/transactions`;
   errorModal = false;
   errorMessage = '';
   sortOrder: string = 'desc';

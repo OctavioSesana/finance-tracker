@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router';
+import { environment } from '../../../environments/environment.prod';
+
 
 @Component({
   selector: 'app-register',
@@ -53,7 +55,7 @@ export class RegisterComponent {
     this.isLoading = true;
     this.errorMessage = '';
 
-    this.http.post<any>('http://localhost:3000/api/auth/register', this.registerData)
+    this.http.post<any>(`${environment.apiUrl}/api/auth/register`, this.registerData)
       .subscribe({
         next: (res) => {
           this.isLoading = false;

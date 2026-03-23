@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private API = 'http://localhost:3000/accounts';
+  private API = `${environment.apiUrl}/api/accounts`;
 
   constructor(private http: HttpClient) {}
 
