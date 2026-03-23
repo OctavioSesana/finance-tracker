@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,7 @@ export class LoginComponent {
   this.isLoading = true;
   this.errorMessage = '';
 
-  this.http.post<any>('http://localhost:3000/api/auth/login', this.loginData)
+  this.http.post<any>(`${environment.apiUrl}/auth/login`, this.loginData)
     .subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
